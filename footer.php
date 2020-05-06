@@ -8,5 +8,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--<script src="script.js"></script>-->
+
+    <div class="row fixed-bottom sh-center">
+        <div class="col">
+            <div class="copyright">&copy; <a href="http://www.shalser.ru" target="_blank"><img src="shalser.jpg" alt=""></a> 2020</div>
+        </div>
+    </div>
+
 </body>
 </html>

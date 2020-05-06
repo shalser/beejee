@@ -14,12 +14,13 @@ require 'head.php';
 
 
 <h1>TODO</h1>
+<div class="container">
 <div class="row">
     <div class="col-sm sh-btn-add">
-        <a href="add.php"><button type="button" class="btn btn-info sh-btn">Add</button></a>
+        <a href="add.php"><button type="button" class="btn btn-info sh-btn">Добавить задачу</button></a>
 
-        <div class="col-sm-6 inputs">
-            <h6>Sort by</h6>
+        <div class="col-sm-4 inputs">
+            <h6>Сортировать</h6>
             <label>Email
                 <input type="checkbox" class="btn sh-btn">
             </label>
@@ -32,7 +33,7 @@ require 'head.php';
         </div>
     </div>
 </div>
-
+</div>
 
 <div class="container">
     <div class="row">
@@ -64,6 +65,12 @@ require 'head.php';
         if (isset($_COOKIE['ok'])) {
             echo $_COOKIE['ok'];
         }
+        if (isset($_COOKIE['auth'])) {
+            echo $_COOKIE['auth'];
+        }
+        if (isset($_COOKIE['out'])) {
+            echo $_COOKIE['out'];
+        }
         ?></h5>
     <script type="text/javascript">
         setTimeout(function(){$('.sh-message-ok').fadeOut('fast')},5000);  //5000 = 5 секунд
@@ -71,7 +78,6 @@ require 'head.php';
 </div>
 
 <?php require 'footer.php'; ?>
-
 
 
 

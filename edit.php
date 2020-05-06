@@ -26,7 +26,8 @@ $info = showTODO($_GET['id']);
                     <input class="sh-iw" type="text" name="add" value="<?=$info['text']?>">
                 </label>
                 <br>
-                <button type="submit" class="btn btn-info sh-btn">Edit</button>
+                <button type="submit" class="btn btn-info sh-btn">Редактировать</button>
+                <a href="/"><button type="button" class="btn btn-success sh-btn">Домой</button></a>
             </form>
         </div>
     </div>

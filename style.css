@@ -48,8 +48,17 @@ h1 {
     font-weight: bold;
 }
 
-.right {
+.right1 {
     margin-right: 15px;
+}
+.right2 {
+    margin-right: 120px;
+}
+.right3 {
+    margin-right: 105px;
+}
+.right4 {
+    margin-right: 79px;
 }
 
 .reg {
@@ -59,6 +68,51 @@ h1 {
 .reg-btn {
     margin-top: 10px;
 }
+
+.sh-center {
+    text-align: center;
+}
+
+a:active {
+    outline:none!important;
+}
+
+a:focus {
+    outline: none!important;
+}
+
+a:hover {
+    outline: none!important;
+}
+
+input {
+    outline:none!important;
+}
+
+textarea {
+    outline:none!important;
+}
+
+input:active {
+    outline:none!important;
+}
+
+textarea:active {
+    outline:none!important;
+}
+
+button:hover {
+    outline:none!important;
+}
+
+button:focus {
+    outline:none!important;
+}
+
+button:hover {
+    outline:none!important;
+}
+
 
 @media (max-width: 575px) {
     .line {

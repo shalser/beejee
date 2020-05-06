@@ -17,8 +17,8 @@ require_once 'config.php';?>
                     <input class="sh-iw" type="text" name="add">
                 </label>
                 <br>
-                <button type="submit" id="addButton" class="btn btn-info sh-btn">Add</button>
-
+                <button type="submit" id="addButton" class="btn btn-info sh-btn">Добавить</button>
+                <a href="/"><button type="button" id="addButton" class="btn btn-info sh-btn">Домой</button></a>
             </form>
         </div>
     </div>

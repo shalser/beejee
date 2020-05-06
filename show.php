@@ -3,17 +3,22 @@ $info = showTODO($_GET['id']);
 require 'head.php'; ?>
 
 <div class="container sh-show">
-    <h6>Просмотр</h6>
+    <h1>Просмотр</h1>
     <div class="row">
 
         <div class="col">
-            <div class="col-sm-6"><span class="sh-bold right">Name:</span> <?=$info['name'] ?></div>
-            <div class="col-sm-6"><span class="sh-bold right">Email:</span> <?=$info['email'] ?></div>
-            <div class="col-sm-6"><span class="sh-bold right">TODO:</span> <?=$info['text'] ?></div>
+            <div class="col-sm-6"><span class="sh-bold right1">Имя пользователя:</span> <?=$info['name'] ?></div>
+            <hr>
+            <div class="col-sm-6"><span class="sh-bold right2">Email:</span> <?=$info['email'] ?></div>
+            <hr>
+            <div class="col-sm-6"><span class="sh-bold right3">Задача:</span> <?=$info['text'] ?></div>
+            <hr>
+            <div class="col-sm-6"><span class="sh-bold right4">Добавлена:</span><span class="sh-del"><?=substr($info['data'], 0, -7) ?></span></div>
+            <hr>
         </div>
 
     </div>
-    <a href="/"><button type="button" class="btn btn-success sh-btn">Home</button></a>
+    <a href="/"><button type="button" class="btn btn-success sh-btn">Домой</button></a>
 </div>
 
 
