@@ -1,0 +1,67 @@
+h1 {
+    text-align: center;
+}
+
+.line {
+    margin-top: -29px;
+}
+
+.sh-btn {
+    text-transform: uppercase;
+    font-weight: bold!important;
+}
+
+.sh-btn-add {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sh-input {
+    align-self: center!important;
+}
+
+.inputs {
+    align-self: center!important;
+}
+
+.sh-iw {
+    width: 440px;
+}
+
+.sh-container {
+    margin-top: 100px;
+}
+
+.left {
+    margin-left: 39px;
+}
+
+.left-up {
+    margin-left: 34px;
+}
+
+.sh-show {
+    margin-top: 130px;
+}
+
+.sh-bold {
+    font-weight: bold;
+}
+
+.right {
+    margin-right: 15px;
+}
+
+.reg {
+    margin-top: 5px;
+}
+
+.reg-btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+    .line {
+        display: none;
+    }
+}
