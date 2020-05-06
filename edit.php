@@ -1,6 +1,11 @@
-<?php require 'head.php';
+<?php
 require_once 'config.php';
-
+if (isset($_COOKIE['user'])) {
+    require 'header-register.php';
+} else {
+    require 'header.php';
+}
+require 'head.php';
 $info = showTODO($_GET['id']);
 ?>
 

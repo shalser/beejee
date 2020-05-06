@@ -68,10 +68,9 @@ function updateTODO($data) {
 
 function registration($data) {
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME,USER,PASS);
-    $sql = 'INSERT INTO users (login, password, email) VALUES (:login, :password, :email)';
+    $sql = 'INSERT INTO users (login, password) VALUES (:login, :pass)';
     $statement = $db->prepare($sql);
     $statement->execute($data);
-    verifyRoleUsers($data);
     header('Location: /');
     exit();
 }
@@ -81,7 +80,7 @@ function login($data) {
     $sql = 'SELECT * FROM users WHERE login=:login AND password=:pass';
     $statement = $db->prepare($sql);
     $statement->bindvalue(':login', $_POST['login']);	//Заполняем данные
-    $statement->bindvalue(':pass', $_POST['password']);
+    $statement->bindvalue(':pass', $_POST['pass']);
     $statement->execute();
     $statement = $statement->fetchAll();
     if (count($statement)>0) {//Если база вернула 1 значение, значит и логин и пароль совпали. отлично
