@@ -73,6 +73,10 @@ h1 {
     text-align: center;
 }
 
+.sh-message-ok {
+    width: 610px;
+}
+
 a:active {
     outline:none!important;
 }

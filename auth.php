@@ -21,6 +21,14 @@ require 'head.php';
                 <button type="submit" class="btn btn-info sh-btn reg-btn">Авторизоваться</button>
                 <a href="/"><button type="button" class="btn btn-info sh-btn reg-btn">Домой</button></a>
             </form>
+            <h5 class="sh-message-ok"><?php
+                if (isset($_COOKIE['access_denied'])) {
+                    echo $_COOKIE['access_denied'];
+                }
+                ?></h5>
+            <script type="text/javascript">
+                setTimeout(function(){$('.sh-message-ok').fadeOut('fast')},5000);  //5000 = 5 секунд
+            </script>
         </div>
     </div>
 </div>

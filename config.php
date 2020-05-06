@@ -90,6 +90,9 @@ function login($data) {
         header('Location: '. $url);
 
     } else {
-        echo '<meta charset="UTF-8">Логин или пароль не верный или пользователь не существует';
+//        echo '<meta charset="UTF-8">Логин или пароль не верный или пользователь не существует';
+        setcookie('access_denied', 'Логин или пароль не верный или пользователь не существует',time() +5, '/', '', false);
+        $url = 'http://beejee/auth.php';
+        header('Location: '. $url);
     }
 }

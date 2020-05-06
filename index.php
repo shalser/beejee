@@ -19,18 +19,18 @@ require 'head.php';
     <div class="col-sm sh-btn-add">
         <a href="add.php"><button type="button" class="btn btn-info sh-btn">Добавить задачу</button></a>
 
-        <div class="col-sm-4 inputs">
+        <form class="col-sm-4 inputs">
             <h6>Сортировать</h6>
             <label>Email
-                <input type="checkbox" class="btn sh-btn">
+                <input type="checkbox" class="btn sh-btn" name="email" value="email">
             </label>
             <label>Имя пользователя
-                <input type="checkbox" class="btn sh-btn">
+                <input type="checkbox" class="btn sh-btn" name="name" value="name">
             </label>
             <label>Статус
-                <input type="checkbox" class="btn sh-btn">
+                <input type="checkbox" class="btn sh-btn" name="status" value="status">
             </label>
-        </div>
+        </form>
     </div>
 </div>
 </div>
