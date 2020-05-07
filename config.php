@@ -14,7 +14,7 @@ define('PASS', '');
 
 function getAllTODO() {
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME,USER,PASS);
-    $sql = "SELECT * FROM todo";
+    $sql = 'SELECT * FROM todo';
     $statement = $db->prepare($sql);
     $statement -> execute();
     $info = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -95,4 +95,15 @@ function login($data) {
         $url = 'http://beejee/auth.php';
         header('Location: '. $url);
     }
+}
+
+function sortBy() {
+    $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
+    $sql = 'SELECT * FROM todo';
+    $statement = $db->prepare($sql);
+//    $statement->bindvalue(':?', $data);
+    $statement->execute();
+    return $data;
+//    header('Location: /');
+//    exit();
 }
