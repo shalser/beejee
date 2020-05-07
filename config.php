@@ -97,14 +97,17 @@ function login($data) {
     }
 }
 
-function sortBy() {
+function sortBy($field) {
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
-    $sql = 'SELECT * FROM todo';
+    $sql = 'SELECT * FROM todo ORDER BY '  . $field;
     $statement = $db->prepare($sql);
-//    $statement->bindvalue(':?', $data);
     $statement->execute();
-    $info = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $info;
+    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//    $statement->bindvalue(':?', $data ?? 'id');
+
+
+    return $data;
 //    return $data;
 //    header('Location: /');
 //    exit();

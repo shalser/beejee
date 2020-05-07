@@ -6,6 +6,9 @@ $('#submit').on('click', function () {
         method: "POST",
         url: "sort.php",
         data: {name: name},
-        dataType: 'html',
+        success: function(data) {
+            // console.log(data);
+        }
     });
 });
+

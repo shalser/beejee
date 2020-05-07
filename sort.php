@@ -11,7 +11,8 @@ $data = [
 if(isset($_POST['name']) &&
     $_POST['name'] === 'name')
 {
-    sortBy($data);
+    $a = sortBy($_POST['name']);
+    print_r($a);
 //    echo '1';
 }
 else
