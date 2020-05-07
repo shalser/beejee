@@ -103,7 +103,9 @@ function sortBy() {
     $statement = $db->prepare($sql);
 //    $statement->bindvalue(':?', $data);
     $statement->execute();
-    return $data;
+    $info = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $info;
+//    return $data;
 //    header('Location: /');
 //    exit();
 }
