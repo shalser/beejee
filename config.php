@@ -31,7 +31,7 @@ function addTODO($data) {
     $statement->bindValue(':text', $_POST['add']);
     $statement -> execute();
     setcookie('ok', 'Задача сохранена',time() +5, '/', '', false);
-    header('Location: /');
+    header('Location: /?page=1');
     exit();
 }
 
@@ -53,7 +53,7 @@ function deleteTODO($id) {
     $statement->bindValue(":id", $id);
     $statement->execute();
 
-    header('Location: /');
+    header('Location: /?page=1');
     exit();
 }
 
@@ -62,7 +62,7 @@ function updateTODO($data) {
     $sql = 'UPDATE todo SET name=:name, email=:email, text=:text WHERE id=:id';
     $statement = $db->prepare($sql);
     $statement->execute($data);
-    header('Location: /');
+    header('Location: /?page=1');
     exit();
 }
 
@@ -71,7 +71,7 @@ function registration($data) {
     $sql = 'INSERT INTO users (login, password) VALUES (:login, :pass)';
     $statement = $db->prepare($sql);
     $statement->execute($data);
-    header('Location: /');
+    header('Location: /?page=1');
     exit();
 }
 
@@ -86,7 +86,7 @@ function login($data) {
     if (count($statement)>0) {//Если база вернула 1 значение, значит и логин и пароль совпали. отлично
 //    echo '<meta charset="UTF-8">Ура! Мы авторизировались!';
 //        $_SESSION['user'] = '[0]';//сохраняем обьект пользователя в сессии
-        $url = '/';
+        $url = '/?page=1';
         header('Location: '. $url);
 
     } else {
@@ -100,7 +100,7 @@ function login($data) {
 function sortBy($field) {
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
     $field = addslashes($field);
-    $sql = "SELECT * FROM todo ORDER BY `{$field}`";
+    $sql = "SELECT * FROM todo ORDER BY `{$field}` LIMIT 1, 3";
     $statement = $db->prepare($sql);
     $statement->execute();
     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -113,7 +113,7 @@ function status1($id) {
     $statement = $db->prepare($sql);
     $statement->bindValue(":id", $id);
     $statement->execute();
-    header('Location: /');
+    header('Location: /?page=1');
     exit();
 }
 
@@ -123,6 +123,15 @@ function status2($id) {
     $statement = $db->prepare($sql);
     $statement->bindValue(":id", $id);
     $statement->execute();
-    header('Location: /');
+    header('Location: /?page=1');
     exit();
+}
+
+function pagination() {
+    $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME,USER,PASS);
+    $sql = 'SELECT * FROM todo';
+    $statement = $db->prepare($sql);
+    $statement -> execute();
+    $info = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $info;
 }

@@ -77,6 +77,10 @@ h1 {
     width: 610px;
 }
 
+.bold {
+    font-weight: 700!important;
+}
+
 a:active {
     outline:none!important;
 }

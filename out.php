@@ -2,4 +2,4 @@
 
 setcookie ('user', '', time() - 3600);
 setcookie('out', 'Вы вышли', time()+5, '/', '', false);
-header('Location: /');
+header('Location: /?page=1');
