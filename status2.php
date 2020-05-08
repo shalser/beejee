@@ -1,3 +1,3 @@
 <?php require_once 'config.php';
 
-status($data);
+status2($_GET['id']);

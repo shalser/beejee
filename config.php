@@ -107,11 +107,22 @@ function sortBy($field) {
     return $data;
 }
 
-function status($data) {
+function status1($id) {
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
-    $sql = 'UPDATE todo SET status=:status WHERE id=:id';
+    $sql = 'UPDATE todo SET status=1 WHERE id=:id';
     $statement = $db->prepare($sql);
-    $statement->execute($data);
+    $statement->bindValue(":id", $id);
+    $statement->execute();
+    header('Location: /');
+    exit();
+}
+
+function status2($id) {
+    $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
+    $sql = 'UPDATE todo SET status=0 WHERE id=:id';
+    $statement = $db->prepare($sql);
+    $statement->bindValue(":id", $id);
+    $statement->execute();
     header('Location: /');
     exit();
 }
