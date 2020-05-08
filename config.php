@@ -98,6 +98,8 @@ function login($data) {
 }
 
 function sortBy($field) {
+//    var_dump($field);
+//die();
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
     $sql = 'SELECT * FROM todo ORDER BY '  . $field;
     $statement = $db->prepare($sql);
@@ -105,10 +107,10 @@ function sortBy($field) {
     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //    $statement->bindvalue(':?', $data ?? 'id');
-
-
+//    var_dump($data);
+//    die();
     return $data;
-//    return $data;
+
 //    header('Location: /');
 //    exit();
 }
