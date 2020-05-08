@@ -97,16 +97,29 @@ require 'head.php';
 
         ?>
     <div class="row" style="<?=$style_p?>">
-
-        <a style="<?=$style_green?>" href="status1.php?page=1&id=<?=$datas['id']?>"><p class="col-sm-1 sh-input statusok"><button style="<?=$style_no?>" type="button" class="btn sh-btn btn-success"></button></p></a>
-        <a style="<?=$style_red?>" href="status2.php?page=1&id=<?=$datas['id']?>"><p class="col-sm-1 sh-input statusno"><button style="<?=$style_ok?>" type="button" class="btn sh-btn btn-success"></button></p></a>
+        <?php
+        if (isset($_COOKIE['user'])) {
+            $disabled = '';
+        } else {
+            $disabled = 'disabled';
+        }
+        ?>
+        <a style="<?=$style_green?>" href="status1.php?page=1&id=<?=$datas['id']?>"><p class="col-sm-1 sh-input statusok"><button style="<?=$style_no?>" type="button" class="btn sh-btn btn-success" <?=$disabled?>></button></p></a>
+        <a style="<?=$style_red?>" href="status2.php?page=1&id=<?=$datas['id']?>"><p class="col-sm-1 sh-input statusno"><button style="<?=$style_ok?>" type="button" class="btn sh-btn btn-success" <?=$disabled?>></button></p></a>
         <p class="col-sm-2"><?=$datas['name'] ?></p>
         <p class="col-sm-3"><?=$datas['email'] ?></p>
         <p class="col-sm-3"><?=htmlentities($datas['text'])?></p>
         <div class="col-sm-3">
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="show.php?page=1&id=<?=$datas['id']?>"><button type="button" class="btn sh-btn btn-primary">show</button></a>
-                <a href="edit.php?page=1&id=<?=$datas['id']?>"><button type="button" class="btn sh-btn btn-success">edit</button></a>
+                <?php
+                if (isset($_COOKIE['user'])) {
+                $disabled = '';
+                } else {
+                    $disabled = 'disabled';
+                }
+                ?>
+                <a href="edit.php?page=1&id=<?=$datas['id']?>"><button type="button" class="btn sh-btn btn-success" <?=$disabled?>>edit</button></a>
                 <a href="delete.php?page=1&id=<?=$datas['id']?>"><button type="button" class="btn sh-btn btn-danger">delete</button></a>
             </div>
         </div>
