@@ -1,7 +1,8 @@
 <?php
 require_once 'config.php';
-//$data = 'name';
+
 $data = sortBy($data ?? 'id');
+
 if (isset($_COOKIE['user'])) {
     require 'header-register.php';
 } else {
@@ -19,7 +20,7 @@ require 'head.php';
     <div class="col-sm sh-btn-add">
         <a href="add.php"><button type="button" class="btn btn-info sh-btn">Добавить задачу</button></a>
         <div id="result"></div> <!--ответ -->
-        <form class="col-sm-4 inputs" action="sort.php" method="post">
+        <form class="col-sm-4 inputs" action="index.php" method="post">
             <h6>Сортировать</h6>
             <label>Email
                 <input type="checkbox" class="btn sh-btn" name="email" value="email"  id="email">
