@@ -98,20 +98,20 @@ function login($data) {
 }
 
 function sortBy($field) {
-    var_dump($field);
-//die();
     $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
     $field = addslashes($field);
     $sql = "SELECT * FROM todo ORDER BY `{$field}`";
     $statement = $db->prepare($sql);
     $statement->execute();
     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-//    $statement->bindvalue(':?', $data ?? 'id');
-//    var_dump($data);
-//    die();
     return $data;
+}
 
-//    header('Location: /');
-//    exit();
+function status($data) {
+    $db = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
+    $sql = 'UPDATE todo SET status=:status WHERE id=:id';
+    $statement = $db->prepare($sql);
+    $statement->execute($data);
+    header('Location: /');
+    exit();
 }

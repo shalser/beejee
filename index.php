@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-$data = sortBy($data ?? 'id');
+$data = sortBy($_POST['name'] ?? 'id');
 
 if (isset($_COOKIE['user'])) {
     require 'header-register.php';
@@ -23,13 +23,13 @@ require 'head.php';
         <form class="col-sm-4 inputs" action="index.php" method="post">
             <h6>Сортировать</h6>
             <label>Email
-                <input type="checkbox" class="btn sh-btn" name="email" value="email"  id="email">
+                <input type="checkbox" class="btn sh-btn" name="name" value="email">
             </label>
             <label>Имя пользователя
-                <input type="checkbox" class="btn sh-btn" name="name" value="name" id="name">
+                <input type="checkbox" class="btn sh-btn" name="name" value="name">
             </label>
             <label>Статус
-                <input type="checkbox" class="btn sh-btn" name="status" value="status" id="status">
+                <input type="checkbox" class="btn sh-btn" name="name" value="status">
             </label>
             <button type="submit" class="btn sh-btn btn-primary" id="submit">Показать</button>
         </form>
@@ -50,7 +50,7 @@ require 'head.php';
     </div>
     <?php foreach ($data as $datas):?>
     <div class="row">
-        <p class="col-sm-1 sh-input"><input type="checkbox"></p>
+        <a href="status.php?id=<?=$datas['id']['status=1']?>"><p class="col-sm-1 sh-input"><button type="button" class="btn sh-btn btn-primary">ок</button></p></a>
         <p class="col-sm-2"><?=$datas['name'] ?></p>
         <p class="col-sm-3"><?=$datas['email'] ?></p>
         <p class="col-sm-3"><?=$datas['text'] ?></p>
@@ -63,6 +63,7 @@ require 'head.php';
         </div>
     </div>
     <?php endforeach;?>
+
     <h5 class="sh-message-ok"><?php
         if (isset($_COOKIE['ok'])) {
             echo $_COOKIE['ok'];
